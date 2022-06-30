@@ -1,0 +1,18 @@
+{% extends 'main/home.html' %}
+    {% block content %}
+        {% if straight %}
+        <p>{{string}}</p>
+        {% elif straight is False %}
+            <p>{{string}}</p>
+            <p>Start on {{point1}} by mining {{dir_blocks_1}} blocks heading {{firstdir}}</p>
+            <p>Then mine {{dir_blocks_2}} heading {{seconddir}}</p>
+            <p>Then mine {{dir_blocks_1}} blocks heading {{firstdir}}</p>
+            <p>Then mine {{dir_blocks_2}} heading {{seconddir}}</p>
+            <p>Now repeat this proces until you get to {{point2}}</p>
+            <p>If you are in the ending point of a tunnel:</p>
+            <p>From point {{point2}} mine {{dir_blocks_2}} heading {{seconddir_reverse}}</p>
+            <p>Then mine {{dir_blocks_2}} heading {{firstdir_reverse}}</p>
+            <p>Then mine {{dir_blocks_1}} heading {{seconddir_reverse}}</p>
+            <p>Then mine {{dir_blocks_2}} heading {{firstdir_reverse}}</p>
+        {% endif %}
+    {% endblock %}
